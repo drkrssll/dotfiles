@@ -1,15 +1,15 @@
 use chunks_rs::{
     position::{Edge, EdgeConfig},
-    utils::tag,
+    utils::tag_label,
     widgets::Slab,
-    Application, Internal,
+    GtkApp, Internal,
 };
 
 pub struct Slabs {}
 
 impl Slabs {
-    pub fn volume(factory: &Application) {
-        let tag = tag("volume");
+    pub fn volume(factory: &GtkApp) {
+        let tag = tag_label("volume");
         let margins = vec![(Edge::Bottom, 20), (Edge::Left, 20)];
         let anchors = EdgeConfig::BOTTOM_LEFT.to_vec();
 
@@ -23,14 +23,6 @@ impl Slabs {
 
         Internal::update_widget(&tag, volume_closure, 0);
 
-        Slab::new(
-            factory.clone(),
-            "Volume".to_string(),
-            tag,
-            margins,
-            anchors,
-            2,
-        )
-        .build();
+        Slab::new(factory.clone(), "Volume", tag, margins, anchors, 2).build();
     }
 }
