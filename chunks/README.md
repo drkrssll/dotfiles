@@ -1,3 +1,3 @@
-# Example Chunks
+# Chunks
 ![Gif](widget.gif)
 
