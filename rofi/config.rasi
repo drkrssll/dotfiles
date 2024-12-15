@@ -179,4 +179,4 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
-@theme "/home/prt/.local/share/rofi/themes/squared-material-red.rasi"
+@theme "/your/theme/here"
