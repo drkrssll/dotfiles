@@ -3,7 +3,7 @@ mod plates;
 mod slabs;
 
 use chunks::Chunks;
-use chunks_rs::{utils::load_css, Application, Factory};
+use chunks_rs::{utils::load_css, Factory, GtkApp};
 use plates::Plates;
 use slabs::Slabs;
 
@@ -31,11 +31,11 @@ window {
 fn main() {
     let factory = Factory::new("chunk.factory");
 
-    let chunks = move |factory: Application| {
+    let chunks = move |factory: GtkApp| {
         Chunks::storage(&factory);
         Chunks::clock(&factory);
 
-        Slabs::volume(&factory);
+        // Slabs::volume(&factory);
 
         // Plates::welcome(&factory);
 
